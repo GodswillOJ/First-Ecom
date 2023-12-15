@@ -12,6 +12,7 @@ html{
 body {
     position: relative;
     display: flex;
+    box-sizing: border-box;
 }
 #menu{
     background-color: rgb(27, 21, 21); 
@@ -412,7 +413,10 @@ tbody tr td{
 
 }  */
 
-@media screen and (max-width: 550px){
+@media screen and (max-width: 590px){
+    #add_form{
+        padding: 0 10% 0 10%;
+    }
     #menu .logo{
         display: none;
     }
@@ -427,7 +431,7 @@ tbody tr td{
         line-height: 2px;
     }
     #interface{
-        margin: 8px 0;
+        /* margin: 8px 0; */
         height: 100%;
     }
     #interface .nav{
@@ -465,6 +469,8 @@ tbody tr td{
     }
 }
 @media(max-width: 477px){
+    
+    
     #interface .nav{
         margin-top: -0.5rem;
         padding: 0;
@@ -590,19 +596,16 @@ ol li {
 
 
 /* Add form */
-    .log_form{
-        position: relative;
-        width: 50%;
-        margin-left: 25%;
-        padding: 0 40px 0 40px;
-    }
+.log_form{
+    position: relative;
+    width: 100%;
+    padding: 0 30% 0 30%;
+}
 
-#add_form{
-    padding: 0 40px 0 40px;
-}
-.col{
+
+/* .col{
     align-items: center;
-}
+} */
 
 #col_name, #col_pass{
     padding-bottom: 9px;
