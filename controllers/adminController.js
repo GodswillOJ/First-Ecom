@@ -578,9 +578,9 @@ const viewAdded = async(req, res)=>{
 // category
 const loadCategory = async(req, res)=> {
     try {
-        const category = await Category.find({ })
+        // const category = await Category.find({ })
 
-        res.render('admin/category', { category })
+        res.render('admin/category')
     } catch (error) {
         console.log(error.message)
     }
