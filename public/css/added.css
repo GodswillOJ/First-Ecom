@@ -619,7 +619,7 @@ html{
     height: 100%;
 }
 #post_content{
-    background-image: url('/public/images/<%= post_data.image %>'); 
+    background-image: url('../images/<%= post_data.image %>'); 
     background-position: center; 
     background-size:cover; 
     object-fit: cover; 
