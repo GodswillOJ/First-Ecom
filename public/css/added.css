@@ -617,14 +617,7 @@ html{
     background-size:cover; 
     width: 100%;
     height: 100%;
-}
-#post_content{
-    background-image: url('../images/<%= post_data.image %>'); 
-    background-position: center; 
-    background-size:cover; 
     object-fit: cover; 
-    width: 100%; 
-    height: 100px;
 }
 .admin_post_des{
     text-align: center;
