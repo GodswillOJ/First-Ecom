@@ -19,54 +19,49 @@
 
     
      
-        <!-- Nav -->
-        <nav>
-            <!-- For search bar -->
-            <div class="logo"><a href="">Ecommerce</a></div>
-            <input type="text" placeholder="New search here..." class="search_field">
-            <div class="search_bar">
-                <i class="fa-solid fa-magnifying-glass" id="lens"></i>
-                <i class="fa-sharp fa-solid fa-xmark" id="closeBtn"></i>
-            </div>
-            <div class="n1">
-                <!-- for icon -->
-                <label class="nav-toggler" for="toggle">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </label>
-    
-                <div class="search_">
-                    <div class="search_icon">
-                        <ul>
-                            <li class="offers"><i class="fa-solid fa-user"></i>
-                                <a id="nav_link" href="#">Account</a>
-                                <ul class='dropdown'>
-                                    <li><a href="/user/login">Sign In</a></li>
-                                    <li><a href="/user/register">Register</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">What's New</a></li>
+                <!-- Nav -->
+                <nav>
+                    <!-- For search bar -->
+                    <div class="logo"><a href="">Ecommerce</a></div>
+        
+                    <div class="n1 ham_nav">
+                        <!-- for icon -->
+                        <label class="nav-toggler menu-toggle" id="mobile-menu" for="toggle">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </label>
+                        <div class="search_">
+                            <div class="search_icon">
+                                <ul>
+                                    <li class="offers"><i class="fa-solid fa-user"></i>
+                                        <a id="nav_link" href="#">Account</a>
+                                        <ul class='dropdown'>
+                                            <a href="/admin/dashboard"><li>Dashboard </li></a>
+                                            <a href="/admin/post"><li>Post</li></a>
+                                            <a href="#"><li>About</li></a>
+                                            <a href="#"><li>What's New</li></a>
+                                        </ul>
+                                    </li>
+                                    <li class="offers"><i class="fa-solid fa-circle-info"></i></i> <a id="nav_link" href="#">Q/E</a></li>
+                                    <li class="offers"><i class="fa-solid fa-cart-shopping"></i><a id="nav_link" href="#">Orders</a></li>                
+                                    
+        
                                 </ul>
-                            </li>
-                            <li class="offers"><i class="fa-solid fa-circle-info"></i></i> <a id="nav_link" href="#">Q/E</a></li>
-                            <li class="offers"><i class="fa-solid fa-cart-shopping"></i><a id="nav_link" href="#">Orders</a></li>                
-                            <li class="_more"><i class="fa-solid fa-angle-down"></i>
-                            <a href="#">More</a>
-                            <ul class='dropdown'>
-                                <li><a href="/user/login">Sign In</a></li>
-                                <li><a href="/user/register">Register</a></li>
-                                <li><a href="#">Q/E</a></li>
-                                <li><a href="#">Notification</a></li>
+                            </div>
+                        </div>
+                        <div class="MyNav">
+                            <ul>
+                                <a href="/admin/dashboard"><li>Dashboard </li></a>
+                                <a href="/admin/post"><li>Post</li></a>
+                                <a href="#"><li>About</li></a>
+                                <a href="#"><li>What's New</li></a>
                             </ul>
-                            </li>
-                        </ul>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <!--  For profile bar -->
-        </nav>
-        <!-- for swiper -->
-        <div class="highlights" style="display: flex;">
+                    <!--  For profile bar -->
+                </nav>        <!-- for swiper -->
+        <div class="highlights">
             <div class="New"><h6>What's New</h6></div>
              <!-- Slider main container -->
             <di class="new_trends swiper">
@@ -95,7 +90,7 @@
             </div>       
         </div>
         <!-- for site name -->
-        <div class="site_logo" style="padding: 5px; background: #39569E;">E-commerce...</div>
+        <div class="site_logo">E-commerce...</div>
         <div aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
