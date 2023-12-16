@@ -510,7 +510,7 @@ const deleteUser = async(req, res)=>{
 
 // Admin Post
 
-const {Category} = require('../models/category');
+const Category = require('../models/category');
 
 // const { request } = require('../routes/adminRoute');
 const Post = require('../models/postSchema')
