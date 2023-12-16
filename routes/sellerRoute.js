@@ -80,6 +80,10 @@ seller.get('/seller/home', sellerAuth.isAdminLogin, adminController.loadHomePost
 
 seller.get('/seller/verify', adminController.verifyMail)
 
+seller.get('/seller/verification', adminController.verificationLoad)
+
+seller.post('/seller/verification', adminController.sentVerificationLink)
+
 // load dashboard
 
 seller.get('/seller/dashboard', sellerAuth.isAdminLogin, adminController.loadDashboard)
