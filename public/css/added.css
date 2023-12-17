@@ -605,19 +605,21 @@ html{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
-    grid-template-rows: 15rem 15rem;
     padding-top: 20px;
     background-position: center;
 }
 #post_content img{
     width: 100%;
 }
+
 #post_content{
-    background-position: center; 
-    background-size:cover; 
+    background-image: url('/public/images/<%= post_data.image %>');
     width: 100%;
-    height: 100%;
-    object-fit: cover; 
+    height: 300px; /* Set your desired height */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
 }
 .admin_post_des{
     text-align: center;
@@ -637,9 +639,12 @@ html{
     display: block;
 }
 .trends_image_post{
+    width: 100%;
+    height: 100px; /* Set your desired height */
+    background-size: cover;
     background-position: center;
-    background-size:cover;
-    height: 5rem;
+    background-repeat: no-repeat;
+    position: relative;
 }
 .trends_image_post p{
     padding-left: 20px;
@@ -664,6 +669,19 @@ html{
         justify-content: space-between;
         padding: 0 32px 8px 32px;
         font-size: 15px;
+    }
+    .post_wrap{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    #post_content{
+        background-image: url('/public/images/<%= post_data.image %>');
+        width: 100%;
+        height: 300px; /* Set your desired height */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
     }
 }
 
