@@ -155,7 +155,8 @@
                         <div class="post_content_wrap">
                             <div class="cat_names"><h2>Commodities</h2></div>
                             <div class="post_wrap">
-                                <% data.slice(0,3).forEach(post_data => { %>
+                                <% var length = data.length
+                                data.slice(length - 3, length).forEach(post_data => { %>
                         
                                     <% if (post_data.category.name === 'commodity' ) { %>
                                    
@@ -180,7 +181,8 @@
                         <div class="post_content_wrap">
                                 <div class="cat_names"><h2>Services</h2></div>
                                 <div class="post_wrap">
-                                    <% data.slice().forEach(post_data => { %>
+                                    <% var length = data.length
+                                    data.slice(length - 3, length).forEach(post_data => { %>
                             
                                         <% if (post_data.category.name === 'Services' ) { %>
                                        
@@ -204,7 +206,8 @@
                         <div class="post_content_wrap">
                                 <div class="cat_names"><h2>Electronics</h2></div>
                                 <div class="post_wrap">
-                                    <% data.slice(0,3).forEach(post_data => { %>
+                                    <% var length = data.length
+                                    data.slice(length - 3, length).forEach(post_data => { %>
                             
                                         <% if (post_data.category.name === 'electronics' ) {  %>
                                         
