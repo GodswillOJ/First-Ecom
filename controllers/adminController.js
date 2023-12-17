@@ -40,7 +40,7 @@ const sendVerifyMail = async(username, email, user_id)=> {
             from: emailUser,
             to: email,
             subject: 'For Verification mail',
-            html: '<p>Hii '+username+', please click here to <a href="https://godswillsecomshop.onrender.com/admin/verify?id='+ user_id +'">Verify</a> your mail</p>'
+            html: '<p>Hii '+username+', please click here to <a href="https://godswillsecom.onrender.com/admin/verify?id='+ user_id +'">Verify</a> your mail</p>'
         }
         transporter.sendMail(mailOptions, function(error, info){
             if (error) {
@@ -85,7 +85,7 @@ const addedSendVerifyMail = async(username, email, user_id)=> {
             from: emailUser,
             to: email,
             subject: 'For Verification mail',
-            html: '<p>Hii '+username+', please click here to <a href="https://godswillsecomshop.onrender.com/user/verify?id='+ user_id +'">Verify</a> your mail</p>'
+            html: '<p>Hii '+username+', please click here to <a href="https://godswillsecom.onrender.com/user/verify?id='+ user_id +'">Verify</a> your mail</p>'
         }
         transporter.sendMail(mailOptions, function(error, info){
             if (error) {
