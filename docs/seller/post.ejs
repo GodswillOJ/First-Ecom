@@ -109,56 +109,56 @@
                          <% } 
                     %>
         
-        <div class="table-responsive" style="margin: 0 10rem 0 10rem;">
-            <% if(data.length == 0) {%>
-            <h2>No item found</h2>
-            <%} else { %>
-                <h2>Posts Details</h2>
+                    <div class="table-responsive" style="margin: 0 10rem 0 10rem;">
+                        <% if(data.length == 0) {%>
+                        <h2>No item found</h2>
+                        <%} else { %>
+                            <h2>Posts Details</h2>
 
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">image</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Details</th>
-                        <td scope="col"><b>Remove</b></td>
-                      </tr>
-                    </thead>
-                    <tbody>
-                        <% for(let i = 0; i < data.length; i++) {
-                        %>
-                      <tr>
-                            <th scope="row"><%= i %></th>
-                            <td><img src="/https://godswillsecom.onrender.com/public/images/<%= data[i].image %>" alt=""></td>
-                            <td><%= data[i].title %></td>
-                            <td><%= data[i].details %></td>
-                            <td>
-                                <form action='/seller/remove-post' method="post">
-                                    <input type="hidden" name="postId" value="<%= data[i]._id %>">
-                                    <button class="btn btn-primary" type="submit">Remove</button>
-                                </form>
-                            </td>
-                      </tr>
-                      <% } %>
-                      <tr>
-                        <td>Total Price:</td>
+                            <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">image</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Details</th>
+                                            <td scope="col"><b>Remove</b></td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <% for(let i = 0; i < data.length; i++) {
+                                            %>
+                                        <tr>
+                                                <th scope="row"><%= i %></th>
+                                                <td><img src="/https://godswillsecom.onrender.com/public/images/<%= data[i].image %>" alt=""></td>
+                                                <td><%= data[i].title %></td>
+                                                <td><%= data[i].details %></td>
+                                                <td>
+                                                    <form action='/seller/remove-post' method="post">
+                                                        <input type="hidden" name="postId" value="<%= data[i]._id %>">
+                                                        <button class="btn btn-primary" type="submit">Remove</button>
+                                                    </form>
+                                                </td>
+                                        </tr>
+                                        <% } %>
+                                        <tr>
+                                            <td>Total Price:</td>
 
-                      </tr>
-                      <tr>
-                        <td>
-                            <form action='/seller/delete-post/' method="post">
-                                    <button class="btn btn-danger" type="submit">Clear All Post</button>
-                            </form>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <form action='/seller/delete-post/' method="post">
+                                                        <button class="btn btn-danger" type="submit">Clear All Post</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                            </table>
 
-                <%
-                }
-                %>
-        </div>     
+                            <%
+                            }
+                            %>
+                    </div>     
                     
                 </div>
             </div>

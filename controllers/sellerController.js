@@ -507,6 +507,18 @@ const deleteUser = async(req, res)=>{
     }
 }
 
+// del_post
+const deletePost = async(req, res)=>{
+    try {
+        await Post.deleteMany({})
+        res.redirect('/seller/all-post')
+
+    } catch (error) {
+        console.log(error.message)
+    }
+}
+
+
 
 // Admin Post
 
@@ -771,6 +783,7 @@ module.exports = {
     editAdminProfile,
     saved,
     deleteUser,
+    deletePost,
     loadPost,
     insertPost,
     loadHomePost,

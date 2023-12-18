@@ -138,7 +138,7 @@ seller.post('/seller/post', upload.single('image'), adminController.insertPost)
 
 seller.get('/seller/all-post/', sellerAuth.isAdminLogin, adminController.loadAllPost)
 // seller.post('/seller/remove-post', sellerAuth.isAdminLogin, adminController.clearPost)
-// seller.post('/seller/delete-post/', sellerAuth.isAdminLogin, adminController.deletePost)
+seller.post('/seller/delete-post/', sellerAuth.isAdminLogin, adminController.deletePost)
 
 seller.get('/all-post/view-added/', adminController.viewAdded)
 
