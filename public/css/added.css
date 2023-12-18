@@ -563,7 +563,7 @@ html{
 .background_info{
     position: relative;
     height: 50rem;
-    background-image: url('/public/images/streets.jpg');
+    background-image: url('/public/images/shoper.jpg');
     background-position: center;
     background-size:cover;
 }
