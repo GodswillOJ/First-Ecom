@@ -563,8 +563,7 @@ html{
 .background_info{
     position: relative;
     height: 50rem;
-    
-    background-image: url('/https://godswillsecom.onrender.comhttps://godswillsecom.onrender.com/images/streets.jpg');
+    background-image: url('/public/images/streets.jpg');
     background-position: center;
     background-size:cover;
 }
