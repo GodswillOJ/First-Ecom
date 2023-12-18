@@ -612,7 +612,7 @@ html{
 }
 
 #post_content{
-    background-image: url('/https://godswillsecom.onrender.comhttps://godswillsecom.onrender.com/images/<%= post_data.image %>');
+    background-image: url('/public/images/<%= post_data.image %>');
     width: 100%;
     height: 300px; /* Set your desired height */
     background-size: cover;
@@ -674,7 +674,7 @@ html{
         grid-template-columns: 1fr;
     }
     #post_content{
-        background-image: url('/https://godswillsecom.onrender.comhttps://godswillsecom.onrender.com/images/<%= post_data.image %>');
+        background-image: url('/public/images/<%= post_data.image %>');
         width: 100%;
         height: 300px; /* Set your desired height */
         background-size: cover;
