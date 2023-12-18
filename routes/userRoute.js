@@ -33,7 +33,7 @@ user_route.set('views', './docs')
 
 // setting public
 user_route.use("/assets", express.static("assets"));
-user_route.use('/public', express.static('public'));
+user_route.use('/public',express.static('public'));
 
 // body-parser
 
@@ -47,7 +47,7 @@ const multer = require('multer')
 
 const storage = multer.diskStorage({
     destination: function ( req, file, cb ) {
-        cb( null, path.join(__dirname, '../https://godswillsecom.onrender.com/public/images'));
+        cb( null, path.join(__dirname, '../public/images'));
     },
     filename: function ( req, file, cb ) {
         cb( null, Date.now() + path.extname(file.originalname) );
