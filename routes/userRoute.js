@@ -33,7 +33,7 @@ user_route.set('views', './docs')
 
 // setting public
 user_route.use("/assets", express.static("assets"));
-user_route.use('/public',express.static('public'));
+user_route.use('/public', express.static('public'));
 
 // body-parser
 
