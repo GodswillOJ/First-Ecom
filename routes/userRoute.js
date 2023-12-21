@@ -29,7 +29,7 @@ user_route.use(session({
 
 // setting views
 user_route.set('view engine', 'ejs')
-user_route.set('views', './views')
+user_route.set('views', './docs')
 
 // setting public
 user_route.use("/assets", express.static("assets"));

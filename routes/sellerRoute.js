@@ -32,7 +32,7 @@ seller.use(session({
 
 // setting views
 seller.set('view engine', 'ejs')
-seller.set('views', './views')
+seller.set('views', './docs')
 
 // setting public
 seller.use("/assets", express.static("assets"));

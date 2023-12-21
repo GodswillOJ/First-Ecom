@@ -32,7 +32,7 @@ admin_route.use(session({
 
 // setting views
 admin_route.set('view engine', 'ejs')
-admin_route.set('views', './views')
+admin_route.set('views', './docs')
 
 // setting public
 admin_route.use("/assets", express.static("assets"));
