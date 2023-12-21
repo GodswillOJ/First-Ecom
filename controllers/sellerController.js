@@ -40,7 +40,7 @@ const sendVerifyMail = async(username, email, user_id)=> {
             from: emailUser,
             to: email,
             subject: 'For Verification mail',
-            html: '<p>Hii '+username+', please click here to <a href="https://godswillsecom.onrender.com/seller/verify?id='+ user_id +'">Verify</a> your mail</p>'
+            html: '<p>Hii '+username+', please click here to <a href="http://localhost:4400/seller/verify?id='+ user_id +'">Verify</a> your mail</p>'
         }
         transporter.sendMail(mailOptions, function(error, info){
             if (error) {
@@ -85,7 +85,7 @@ const addedSendVerifyMail = async(username, email, user_id)=> {
             from: emailUser,
             to: email,
             subject: 'For Verification mail',
-            html: '<p>Hii '+username+', please click here to <a href="https://godswillsecom.onrender.com/seller/verify?id='+ user_id +'">Verify</a> your mail</p>'
+            html: '<p>Hii '+username+', please click here to <a href="http://localhost:4400/seller/verify?id='+ user_id +'">Verify</a> your mail</p>'
         }
         transporter.sendMail(mailOptions, function(error, info){
             if (error) {
@@ -122,7 +122,7 @@ const sendResetPasswordMail = async(username, email, token)=> {
             from: emailUser,
             to: email,
             subject: 'For Reset mail',
-            html: '<p>Hii '+username+', please click here to <a href="https://godswillsecom.onrender.com/seller/forget-password?token='+ token +'">Reset</a> your password</p>'
+            html: '<p>Hii '+username+', please click here to <a href="http://localhost:4400/seller/forget-password?token='+ token +'">Reset</a> your password</p>'
         }
         transporter.sendMail(mailOptions, function(error, info){
             if (error) {
@@ -158,32 +158,6 @@ const forgetVerify = async(req, res) => {
     } catch (error) {
         console.log(error.message)
    }
-}
-
-const verificationLoad = async (req, res)=> {
-    try {
-        res.render('seller/verification')
-    } catch (error) {
-        console.log(error.message)
-    }
-}
-
-// verificationSent
-
-const sentVerificationLink = async(req, res)=>{
-    try {
-        const email = req.body.email;
-        const userData = await User.findOne({ email: email })
-
-        if (userData) {
-            sendVerifyMail(userData.username, userData.email, userData._id)
-            res.render('seller/verification', {message: 'Reset verification mail has been sent to your mail'})
-        } else {
-            res.render('seller/verification',  {message: 'This email does not exist'})
-        }
-    } catch (error) {
-        console.log(error.message)
-    }
 }
 
 // forgetPasswordload
@@ -476,6 +450,45 @@ const editAdminProfile = async(req, res, next)=>{
     }
 }
 
+// const addLoad = async(req, res, next) => {
+//     try {
+//         res.render('seller/add')
+//     } catch (error) {
+//         console.log(error.message)
+//     }
+// }
+
+// const addUser = async (req, res) => {
+//     console.log(req.body)
+//     const salt = await bcrypt.genSalt(15)
+//     const hashPassword = await bcrypt.hash(req.body.password, salt)
+//     const image = req.file.filename
+
+//     try {
+//         const user = new User({
+//             username: req.body.username,
+//             firstname: req.body.firstname,
+//             lastname: req.body.lastname,
+//             email: req.body.email,
+//             mno: req.body.mno,
+//             details: req.body.details,
+//             password: hashPassword,
+//             image: image,
+//             is_admin:0
+//         })
+//               const userData = await user.save();
+
+//               if(userData){
+//                  addedSendVerifyMail(req.body.username, req.body.email, userData._id)
+//                   console.log(userData)
+//                   res.render('seller/add', {message: 'Registered Successfully. Please Check your mail for verification'})
+//               } else{
+//                   res.render('seller/add', {message: 'Registration failed.'})
+//               }
+//         } catch (e) {
+//             console.log(e.message)
+//         }
+//     }
 
 // for Purchase
 const saved = async (req, res, next) => {
@@ -500,7 +513,18 @@ const deleteUser = async(req, res)=>{
     try {
         const id = req.params.id;
         await User.deleteOne({ _id: id })
-        res.redirect('/seller/dashboard')
+        res.redirect('/admin/dashboard')
+
+    } catch (error) {
+        console.log(error.message)
+    }
+}
+
+// remove_post
+const removePost = async(req, res)=>{
+    try {
+        await Post.deleteOne({author: req.session.user_id})
+        res.redirect('/seller/all-post')
 
     } catch (error) {
         console.log(error.message)
@@ -519,10 +543,9 @@ const deletePost = async(req, res)=>{
 }
 
 
-
 // Admin Post
 
-const Category = require('../models/category');
+const {Category} = require('../models/category');
 
 // const { request } = require('../routes/adminRoute');
 const Post = require('../models/postSchema')
@@ -760,8 +783,6 @@ const viewOrderInfo = async(req, res) => {
 // 
 module.exports = {
     LoadRegister,
-    verificationLoad,
-    sentVerificationLink,
     viewOrderInfo,
     insertAdmin,
     informationLoad,
@@ -784,6 +805,7 @@ module.exports = {
     saved,
     deleteUser,
     deletePost,
+    removePost,
     loadPost,
     insertPost,
     loadHomePost,

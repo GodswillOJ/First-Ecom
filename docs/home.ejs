@@ -63,7 +63,7 @@
         <div class="highlights">
             <div class="New"><h6>What's New</h6></div>
              <!-- Slider main container -->
-            <di class="new_trends swiper">
+            <div class="new_trends swiper">
                 <!-- Additional required wrapper -->
                 <div id="swip_wrap" class="swiper-wrapper">
                   <!-- Slides -->
@@ -161,7 +161,7 @@
                                     <% if (post_data.category.name === 'commodity' ) { %>
                                    
                                        <div id="post_content" style="background-image: url('/public/images/<%= post_data.image %>');">
-               
+                                        
                                            <div class="admin_post_des">    
                                                <h4 class="post_title"><%= post_data.title%></h4>
                                                <p><%= post_data.richDescription %></p>

@@ -32,7 +32,7 @@ seller.use(session({
 
 // setting views
 seller.set('view engine', 'ejs')
-seller.set('views', './docs')
+seller.set('views', './views')
 
 // setting public
 seller.use("/assets", express.static("assets"));
@@ -79,10 +79,6 @@ seller.get('/seller/home', sellerAuth.isAdminLogin, adminController.loadHomePost
 //  email verify
 
 seller.get('/seller/verify', adminController.verifyMail)
-
-seller.get('/seller/verification', adminController.verificationLoad)
-
-seller.post('/seller/verification', adminController.sentVerificationLink)
 
 // load dashboard
 
@@ -137,7 +133,7 @@ seller.get('/seller/post', sellerAuth.isAdminLogin, adminController.loadPost)
 seller.post('/seller/post', upload.single('image'), adminController.insertPost)
 
 seller.get('/seller/all-post/', sellerAuth.isAdminLogin, adminController.loadAllPost)
-// seller.post('/seller/remove-post', sellerAuth.isAdminLogin, adminController.clearPost)
+seller.post('/seller/remove-post', sellerAuth.isAdminLogin, adminController.removePost)
 seller.post('/seller/delete-post/', sellerAuth.isAdminLogin, adminController.deletePost)
 
 seller.get('/all-post/view-added/', adminController.viewAdded)

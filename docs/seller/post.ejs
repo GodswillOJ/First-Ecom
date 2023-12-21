@@ -109,7 +109,7 @@
                          <% } 
                     %>
         
-        <div class="table-responsive" style="margin: 0 10rem 0 10rem;">
+        <div class="table-responsive">
             <% if(data.length == 0) {%>
             <h2>No item found</h2>
             <%} else { %>
@@ -141,20 +141,13 @@
                             </td>
                       </tr>
                       <% } %>
-                      <tr>
-                        <td>Total Price:</td>
 
-                      </tr>
-                      <tr>
-                        <td>
-                            <form action='/seller/delete-post/' method="post">
-                                    <button class="btn btn-danger" type="submit">Clear All Post</button>
-                            </form>
-                        </td>
-                      </tr>
                     </tbody>
+                    
                   </table>
-
+                  <form action='/seller/delete-post/' method="post">
+                                    <button class="btn btn-danger" type="submit">Clear All Post</button>
+                    </form>
                 <%
                 }
                 %>

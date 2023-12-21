@@ -450,18 +450,22 @@ nav .logo a {
 
 /* FOOTER */
 .more_in{
-    background-color: none;
-    position: relative;
+    background-color: black;
+    position: absolute;
     display: flex;
-    justify-content: space-between;
-    color: azure;
-    padding: 20px;
+    width: 100%;
+    justify-content: center;
+    bottom: 0;
+    color: rgb(50, 43, 171);
 }
 .more_in .fa-brands {
     color: rgb(223, 66, 66);
 }
 .more_in p {
-    padding-right: 30px;
+    padding-left: 30px;
+}
+.more_in ul{
+    padding-left: 0;
 }
 .more_in ul li {
     display: inline-block;

@@ -40,7 +40,7 @@ const sendVerifyMail = async(username, email, user_id)=> {
             from: emailUser,
             to: email,
             subject: 'For Verification mail',
-            html: '<p>Hii '+username+', please click here to <a href="https://godswillsecom.onrender.com/admin/verify?id='+ user_id +'">Verify</a> your mail</p>'
+            html: '<p>Hii '+username+', please click here to <a href="http://localhost:4400/admin/verify?id='+ user_id +'">Verify</a> your mail</p>'
         }
         transporter.sendMail(mailOptions, function(error, info){
             if (error) {
@@ -85,7 +85,7 @@ const addedSendVerifyMail = async(username, email, user_id)=> {
             from: emailUser,
             to: email,
             subject: 'For Verification mail',
-            html: '<p>Hii '+username+', please click here to <a href="https://godswillsecom.onrender.com/user/verify?id='+ user_id +'">Verify</a> your mail</p>'
+            html: '<p>Hii '+username+', please click here to <a href="http://localhost:4400/user/verify?id='+ user_id +'">Verify</a> your mail</p>'
         }
         transporter.sendMail(mailOptions, function(error, info){
             if (error) {
@@ -122,7 +122,7 @@ const sendResetPasswordMail = async(username, email, token)=> {
             from: emailUser,
             to: email,
             subject: 'For Reset mail',
-            html: '<p>Hii '+username+', please click here to <a href="https://godswillsecomshop.onrender.com/admin/forget-password?token='+ token +'">Reset</a> your password</p>'
+            html: '<p>Hii '+username+', please click here to <a href="http://localhost:4400/admin/forget-password?token='+ token +'">Reset</a> your password</p>'
         }
         transporter.sendMail(mailOptions, function(error, info){
             if (error) {
@@ -674,6 +674,7 @@ const newMessage = async(req, res) => {
 
             const message = new Messages({ 
                  sender: req.body.sender,
+                 title: req.body.title,
                  receiver: req.body.receiver, 
                  content: req.body.content, 
                  adminId: adminId

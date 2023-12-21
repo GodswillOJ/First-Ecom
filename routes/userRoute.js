@@ -29,7 +29,7 @@ user_route.use(session({
 
 // setting views
 user_route.set('view engine', 'ejs')
-user_route.set('views', './docs')
+user_route.set('views', './views')
 
 // setting public
 user_route.use("/assets", express.static("assets"));
@@ -137,7 +137,7 @@ user_route.post('/user/ordered', authMiddleware.isLogin, userController.orderIte
 user_route.get('/user/all_orders', authMiddleware.isLogin, userController.all_orders)
 
 user_route.get('/user/inbox', authMiddleware.isLogin, userController.messageFetch)
-
+user_route.get('/mark-as-read', authMiddleware.isLogin, userController.MarkAsRead)
 
 // user logout
 //logout

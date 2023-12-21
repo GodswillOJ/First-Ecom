@@ -122,7 +122,7 @@ const sendVerifyMail = async(username, email, user_id)=> {
             from: emailUser,
             to: email,
             subject: 'For Verification mail',
-            html: '<p>Hii '+username+', please click here to <a href="https://godswillsecom.onrender.com/user/verify?id='+ user_id +'">Verify</a> your mail</p>'
+            html: '<p>Hii '+username+', please click here to <a href="http://localhost:4400/user/verify?id='+ user_id +'">Verify</a> your mail</p>'
         }
         transporter.sendMail(mailOptions, function(error, info){
             if (error) {
@@ -156,7 +156,7 @@ const sendResetPasswordMail = async(username, email, token)=> {
             from: emailUser,
             to: email,
             subject: 'For Reset mail',
-            html: '<p>Hii '+username+', please click here to <a href="https://godswillsecom.onrender.com/user/forget-password?token='+ token +'">Reset</a> your password</p>'
+            html: '<p>Hii '+username+', please click here to <a href="http://localhost:4400/user/forget-password?token='+ token +'">Reset</a> your password</p>'
         }
         transporter.sendMail(mailOptions, function(error, info){
             if (error) {
@@ -735,6 +735,13 @@ const all_orders = async(req, res) => {
     
     }
 
+    const MarkAsRead = async(req, res) => {
+      
+            const messageId = req.body.adminId;
+            await Messages.findByIdAndUpdate(messageId, { isRead: true });
+            res.send('OK');
+          
+    }
 // paypal-config
 const paypal = require('paypal-rest-sdk');
 
@@ -750,6 +757,7 @@ paypal.configure({
 
 module.exports = {
     messageFetch,
+    MarkAsRead,
     all_orders,
     orderLoad,
     orderItem,
